@@ -16,6 +16,7 @@ public class LearnMemberStatic : MonoBehaviour
     // 私人 private 僅限此類別(腳本)存取 : 隱藏在屬性面板
     private int speed = 99;
 
+    public Camera cam;    // 定義一個類型為 Camera 的物件，名稱是cam
 
     private void Start()
     {
@@ -28,7 +29,23 @@ public class LearnMemberStatic : MonoBehaviour
         Time.timeScale = 0.5f; // 時間速度變為0.5，也就是變慢為一半
 
         // 使用靜態方法
-        print(Random.Range(0.1f,0.99f));  // 第一個多載 (可用於傷害(暴擊) or 掉寶機率等)
-        print(Random.Range(100,500));     // 第二個多載
+        print(Random.Range(0.1f, 0.99f));  // 第一個多載 (可用於傷害(暴擊) or 掉寶機率等)
+        print(Random.Range(100, 500));     // 第二個多載
+
+        // 練習一 :
+        // 使用靜態成員 - 取得數學 PI 3.141592 : Mathf (Math Fnmction)
+
+        print(Mathf.PI);
+
+        // 練習二 :
+        // 使用靜態方法 - 數學.絕對值 -999 : Mathf
+        print(Mathf.Abs(-999));
+
+        // 靜態 : 類別.成員
+        print("攝影機數量:" + Camera.allCamerasCount);  
+        // 非靜態 : 物件.成員
+        print(cam.depth);
     }
+    
 }
+

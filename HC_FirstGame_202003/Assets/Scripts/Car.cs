@@ -27,4 +27,22 @@ public class Car : MonoBehaviour
         print("開空調啦!");
         return true;
     }
+
+    // 多載方法
+    // 同名方法有不同數量或不同類型的參數
+    /// <summary>
+    /// 多載 1 : 飛行
+    /// </summary>
+    public void Fly()
+    {
+        print("車飛囉~");
+    }
+    /// <summary>
+    /// 多載 2 :飛行並指定高度
+    /// </summary>
+    /// <param name="height"></param>
+    public void Fly(int height)
+    {
+        print("車子飛超高:" + height);
+    }
 }
